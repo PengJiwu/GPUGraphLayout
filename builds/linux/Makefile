@@ -21,7 +21,7 @@ ifeq ($(DEBUG_PRINTING), 1)
 endif
 
 # Linker flags
-LDFLAGS  :=-lc -lm -lstdc++
+LDFLAGS  :=-lc -lm -lstdc++ -fopenmp
 ifeq ($(CUDA_SUPPORT), 1)
 	LDFLAGS:=$(LDFLAGS) -L/usr/local/cuda/lib64 -lcudart
 endif
@@ -87,7 +87,7 @@ $(CUDA_OBJS): $(CUDA_SRCS) $(CUDA_DEPS)
 
 $(SNAP_OBJS): $(SNAP_SRCS)
 	mkdir -p $(@D)
-	$(CC) -c $(CPPFLAGS) $(CXXFLAGS) -I $(L_SRC_DIR)/snap/glib-core/ -o $@ $(@:$(OBJ_DIR)/%.o=$(L_SRC_DIR)/%.cpp)
+	$(CC) -c $(CPPFLAGS) $(CXXFLAGS) -I $(L_SRC_DIR)/snap/glib-core/ -fopenmp -o $@ $(@:$(OBJ_DIR)/%.o=$(L_SRC_DIR)/%.cpp)
 
 $(PNGWRITER_OBJS): $(PNGWRITER_SRCS)
 	mkdir -p $(@D)
