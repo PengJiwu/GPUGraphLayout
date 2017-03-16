@@ -263,28 +263,28 @@ namespace RPGraph
         endtime = std::chrono::high_resolution_clock::now();
         runningtime = (endtime - starttime);
         runningtime_us = std::chrono::duration_cast<std::chrono::microseconds>(runningtime);
-        runningtimes[iteration][2] = runningtime_us.count();
+        //runningtimes[iteration][2] = runningtime_us.count();
         
         starttime = std::chrono::high_resolution_clock::now();
             for (nid_t n = 0; n < graph.num_nodes(); ++n) apply_gravity(n);
         endtime = std::chrono::high_resolution_clock::now();
         runningtime = (endtime - starttime);
         runningtime_us = std::chrono::duration_cast<std::chrono::microseconds>(runningtime);
-        runningtimes[iteration][0] = runningtime_us.count();
+        //runningtimes[iteration][0] = runningtime_us.count();
         
         starttime = std::chrono::high_resolution_clock::now();
             for (nid_t n = 0; n < graph.num_nodes(); ++n)    apply_attract(n);
         endtime = std::chrono::high_resolution_clock::now();
         runningtime = (endtime - starttime);
         runningtime_us = std::chrono::duration_cast<std::chrono::microseconds>(runningtime);
-        runningtimes[iteration][1] = runningtime_us.count();
+        //runningtimes[iteration][1] = runningtime_us.count();
         
         starttime = std::chrono::high_resolution_clock::now();
             for (nid_t n = 0; n < graph.num_nodes(); ++n)    apply_repulsion(n);
         endtime = std::chrono::high_resolution_clock::now();
         runningtime = (endtime - starttime);
         runningtime_us = std::chrono::duration_cast<std::chrono::microseconds>(runningtime);
-        runningtimes[iteration][3] = runningtime_us.count();
+        //runningtimes[iteration][3] = runningtime_us.count();
 
 
         starttime = std::chrono::high_resolution_clock::now();
@@ -292,7 +292,7 @@ namespace RPGraph
         endtime = std::chrono::high_resolution_clock::now();
         runningtime = (endtime - starttime);
         runningtime_us = std::chrono::duration_cast<std::chrono::microseconds>(runningtime);
-        runningtimes[iteration][4] = runningtime_us.count();
+        //runningtimes[iteration][4] = runningtime_us.count();
 
         starttime = std::chrono::high_resolution_clock::now();
         for (nid_t n = 0; n < graph.num_nodes(); ++n)
@@ -304,7 +304,7 @@ namespace RPGraph
         endtime = std::chrono::high_resolution_clock::now();
         runningtime = (endtime - starttime);
         runningtime_us = std::chrono::duration_cast<std::chrono::microseconds>(runningtime);
-        runningtimes[iteration][5] = runningtime_us.count();
+        //runningtimes[iteration][5] = runningtime_us.count();
 
         iteration++;
     }
