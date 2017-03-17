@@ -14,7 +14,7 @@ NVCCFLAGS:=#-G
 # C preprocessor flags
 CPPFLAGS :=-D NO_FREETYPE -isystem $(L_SRC_DIR)/libpng-1.6.23/
 ifeq ($(CUDA_SUPPORT), 1)
-	CPPFLAGS:=$(CPPFLAGS) -D __CUDA__ -isystem /usr/local/cuda/include/
+	CPPFLAGS:=$(CPPFLAGS) -D __CUDA__ -isystem /usr/local/cuda/include/ -isystem /usr/local/cuda-7.5/include/
 endif
 ifeq ($(DEBUG_PRINTING), 1)
 	CPPFLAGS:=$(CPPFLAGS) -D DEBUGPRINT
